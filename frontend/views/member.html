@@ -1,0 +1,63 @@
+<div ng-controller="MemberController">
+    <div>
+        <div>
+            <h1 style="text-align: center; margin-top: 1rem;">Member's Profile </h1>
+        </div>
+        <div class="user-name">
+            <h2>
+               {{ user.name }}
+            </h2>
+        </div>
+    
+        <div class="info-card">
+            <div class="details">
+                <h4 style="width: 70px;">Address: </h4>
+                <p> {{user.address}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Age:</h4>
+                <p> {{user.age}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Email:</h4>
+                <p> {{user.email}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Role: </h4>
+                <p> {{user.role}} </p>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 30px 50px;">
+    <div>
+        <div>
+            <h1 style="text-align: center;">{{user.name}}'s book loan Details</h1>
+        </div>
+        <table style="width: 80%; margin: 3rem auto;">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Year</th>
+                    <th>Loan Date</th>
+                    <th>Return Date</th>
+                    <th>Is Returned?</th>
+                    <th>Is Paid?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="loan in loanDetails">
+                    <td> {{ loan.title }} </td>
+                    <td> {{ loan.author }} </td>
+                    <td> {{ loan.publishedYear }} </td>
+                    <td> {{ loan.loanDate | date: 'MMM d, y' }} </td>
+                    <td> {{ loan.returnDate | date: 'MMM d, y' }} </td>
+                    <td> {{ loan.isReturned === true ? 'Returned' : 'Not Returned' }} </td>
+                    <td> {{ loan.isPaid === true ? 'Paid' : 'Not Paid' }} </td>
+                    <td> <a href="#!/member/{{user.userId}}"><button type="button" class="btn" >Update</button></a> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

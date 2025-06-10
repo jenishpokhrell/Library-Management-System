@@ -1,0 +1,37 @@
+<div ng-controller="BooksController">
+    <div>
+        <div>
+            <h1 style="text-align: center;">Books list</h1>
+        </div>
+        <div ng-if="books" class="books">
+            <div class="book" ng-repeat="book in books">
+                <div>
+                    <h2>
+                        {{book.title}}
+                    </h2>
+                    <div>
+                        <p>
+                            Author: {{book.author}}
+                        </p>
+                        <p>
+                            Published Year: {{book.publishedYear}}
+                        </p>
+                        <p ng-class="{{book.isAvailable === true }}">
+                            isAvailable: {{ book.isAvailable === true ? 'Available' : 'Out of Stock' }}
+                        </p>
+                        <p>
+                            Genres: {{ book.genres }}
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="user.role === 'Admin'" class="down">
+    <a href="#!/addbook"><button type="button" class="down-button">Add Book</button></a>
+</div> 

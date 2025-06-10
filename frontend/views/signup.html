@@ -1,0 +1,45 @@
+<h1 style="text-align: center; margin-top: 4rem;">Register</h1>
+<div ng-controller="SignupController">
+
+  <section class="create-account">
+    <div class="sign-up">
+      <form name="createUserForm" novalidate ng-submit="createUser()">
+        <input type="text" name="name" ng-model="user.name" placeholder="Name" ng-required="true" />
+        <span ng-show="createUserForm.name.$touched && createUserForm.name.$invalid">Name is required</span>
+
+        <input type="text" name="address" ng-model="user.address" placeholder="Address" ng-required="true" />
+        <span ng-show="createUserForm.address.$touched && createUserForm.address.$invalid">Address is required</span>
+
+        <input type="number" name="age" ng-model="user.age" placeholder="Age" ng-required="true" />
+        <span ng-show="createUserForm.age.$touched && createUserForm.age.$invalid">Age is required</span>
+
+        <input
+          type="email"
+          name="email"
+          ng-model="user.email"
+          placeholder="Email"
+          aria-required="true"
+          required
+        />
+        <span ng-show="createUserForm.email.$touched && createUserForm.email.$invalid">Email is required</span>
+
+        <input type="password" name="password" ng-model="user.password" placeholder="Password" ng-required="true" ng-minlength="8"/>
+        <span ng-show="createUserForm.name.$touched && createUserForm.name.$invalid">Password is required</span>
+        <span ng-show="createUserForm.name.$error.$minlength">Password should be at least 8 characters</span>
+
+        <div class="radio">
+          <input type="radio" name="role" ng-model="user.role" value="Member" ng-required="true">
+          <span style="font-size: 14px;">I am a member</span>
+        </div>
+        <button type="submit" ng-disabled="createUserForm.$invalid" class="btn">Sign Up</button>
+      </form>
+      <p style="text-align: center;">
+        Already Have an Account?<span
+          ><a href="#!/login"
+            ><i><b>Click Here!</b></i></a
+          ></span
+        >
+      </p>
+      </div>
+  </section>
+</div>

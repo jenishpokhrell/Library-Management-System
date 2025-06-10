@@ -1,0 +1,24 @@
+<div ng-controller="ProfileController">
+    <div>
+        <h1 style="text-align: center;">LIBOOK's Members</h1>
+    </div>
+    <table style="width: 80%; margin: 3rem auto;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td> {{ user.name }} </td>
+                <td> {{ user.address }} </td>
+                <td> {{ user.age}} </td>
+                <td> {{ user.email }} </td>
+                <td> <a href="#!/member/{{user.userId}}"><button type="button" class="btn" >View</button></a> </td>
+        </tbody>
+    </table>
+</div>

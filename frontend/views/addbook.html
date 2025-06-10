@@ -1,0 +1,40 @@
+<section ng-controller="AddBookController">
+    <h1 style="text-align: center; margin: 2rem 0;">
+        {{ heading }}
+    </h1>
+
+    <div class="sign-up">
+      <form name="addBook" novalidate ng-submit="submitBook()">
+        <input type="text" name="name" ng-model="book.title" placeholder="Title" ng-required="true" />
+        <span ng-show="addBook.name.$touched && addBook.name.$invalid">Book title is required</span>
+
+        <input type="text" name="address" ng-model="book.author" placeholder="Author" ng-required="true" />
+        <span ng-show="addBook.address.$touched && addBook.address.$invalid">Address is required</span>
+
+        <input
+          type="text"
+          name="publishedYear"
+          ng-model="book.publishedYear"
+          placeholder="Published Year"
+          aria-required="true"
+          required
+        />
+        <span ng-show="addBook.publishedYear.$touched && addBook.publishedYear.$invalid">Email is required</span>
+
+        <label for="">Choose Genres:</label>
+        <select multiple ng-model="book.genres" ng-options="genre for genre in genres">
+        </select>
+
+        <p style="font-size: 14px;"> <span style="font-weight: 600; ">You selected: </span>{{ book.genres }}</p>
+
+        <div class="radio">
+            <input type="radio" name="isAvailable" ng-model="book.isAvailable" ng-value="true" required /> <span style="font-size: 14px;">Available</span>
+            <input type="radio" name="isAvailable" ng-model="book.isAvailable" ng-value="false" required /> <span style="font-size: 14px;">Not Available</span>
+          <!-- <span style="font-size: 14px;">Available</span> -->
+        </div>
+        <button type="submit" ng-disabled="addBook.$invalid" class="btn">Add Book</button>
+      </form>
+      </div>
+</div>
+
+</section>

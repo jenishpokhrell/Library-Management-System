@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header h1{
+    color:black;
+    font-size: 25px;
+    text-decoration: none !important;
+    font-family:cursive;
+    cursor: pointer;
+
+}
+nav{
+    height: 7vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 20px;
+    padding: 3px 40px;
+}
+
+.navlinks ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+    position:relative;
+    text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+}
+.navlinks ul li a:hover{
+    color: rgb(12, 135, 192);
+}
+.icons i{
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+.icons{
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    display: inline-block;
+    padding: 0px 17px;
+    color: rgb(46, 46, 46);
+    text-align: center;
+}
+
+.btn{
+    width: 150%;
+    border: 1px solid black;
+    background: black;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .5s;
+}
+.btn:hover{
+    background: transparent;
+    color: black;
+    /* transform: scale(0.9); */
+}
+
+.home-message{
+    color: red;
+}
+
+
+.your-account {
+    width: 70%;
+    /* margin: 10% 250px 50px 250px; */
+    margin: 12% auto;
+    display: flex;
+}
+
+.log-in {
+    border: 2px solid rgb(0, 0, 0, .1);
+    width: 30%;
+    flex-basis: 48%;
+    margin: 20px 20px;
+    padding: 30px 30px;
+}
+
+.log-in h2 {
+    font-size: 20px;
+    margin: 5px 15px;
+    font-weight: 600;
+}
+
+.log-in p {
+    font-size: 15px;
+    margin: 5px 15px;
+    text-align: justify;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    display: block;
+    margin: 20px 15px;
+    padding: 10px 15px;
+    width: 80%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: .1px solid rgb(0, 0, 0, .3);
+    font-size: 13px;
+}
+
+input::placeholder {
+    opacity: .5;
+}
+
+.log-in p span {
+    font-size: 13px;
+    text-decoration: underline;
+    /* text-align: center; */
+    /* margin: 5px 50px; */
+    cursor: pointer;
+    transition: 1s;
+}
+
+.log-in span:hover {
+    color: rgb(22, 183, 247);
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: whitesmoke;
+    transition: 1s;
+}
+
+input[type="submit"]:hover {
+    background: transparent;
+    color: black;
+}
+
+.log-in a {
+    text-decoration: none;
+}
+
+.sub-section {
+    height: 6vh;
+    margin: auto 0px;
+    background-color: rgb(238, 238, 238);
+    padding: 0px 55px;
+}
+
+.sub-section span {
+    display: inline-block;
+    color: black;
+    margin: 5px 5px;
+    padding: 5px 0px;
+    font-size: 13px;
+    align-items: center;
+}
+
+.sub-section span a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.container h1 {
+    color: black;
+    font-size: 23px;
+    font-family: cursive;
+    font-weight: 800;
+    text-align: center;
+}
+
+.create-account {
+    width: 60%;
+    margin: 3% auto;
+    /* text-align: center; */
+    display: flex;
+}
+
+.sign-up {
+    border: 1px solid rgb(0, 0, 0,.1) ;
+    width: 30%;
+    flex-basis: 48%;
+    margin: 0px auto;
+    padding: 20px 30px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="submit"], 
+textarea {
+    display: block;
+    margin: 20px 15px;
+    padding: 10px 15px;
+    width: 90%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: .5px solid rgb(0, 0, 0, .3);
+    font-size: 13px;
+}
+
+label{
+    display: block;
+    margin: 0px 15px;
+    width: 90%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+input[type="radio"]{
+    display: block;
+    margin: 20px 10px;
+    padding: 10px 10px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: .5px solid rgb(0, 0, 0, .3);
+    font-size: 13px;
+}
+
+select{
+    display: block;
+    margin: 20px 15px;
+    padding: 10px 15px;
+    width: 90%;
+    height: 25vh;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: .5px solid rgb(0, 0, 0, .3);
+    font-size: 13px;
+}
+
+textarea::placeholder{
+    opacity: .5;
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+
+}
+.btn{
+    display: block;
+    margin: 20px 15px;
+    padding: 10px 15px;
+    width: 90%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: .1px solid rgb(0, 0, 0, .3);
+    font-size: 13px;
+}
+
+input::placeholder {
+    opacity: .5;
+}
+
+.btn {
+    background-color: black;
+    color: whitesmoke;
+    transition: 1s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: black;
+}
+
+input[type="checkbox"] {
+    font-size: 12px;
+    padding: 0px 10px;
+    accent-color: black;
+}
+
+.sign-up p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.sign-up p span {
+    padding: 0px 5px;
+}
+
+.name{
+    background-color: black;
+    cursor: pointer;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    border-radius:  90%;
+}
+
+.books{
+    width: 70%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* grid-template-rows: rep  eat(5, 1fr); */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.book{
+    border: .5px solid black;
+    margin: 10px 10px;
+    padding: 20px;
+}
+
+/* --------------------------------------------------     PROFILE PAGE STYLING    -------------------------------------------- */
+
+.user-name{
+    padding: 10px;
+    width: 30%;
+    border: .5px solid black;
+    margin: 2rem auto 1rem auto;
+    text-align: center;
+}
+
+.info-card{
+    border: 1px solid black;
+    width: 30%;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.down{
+    position: relative;
+}
+
+.down-button{
+    width: 5%;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    border: 1px solid black;
+    background: black;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 17px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .5s;
+    z-index: 10;
+}
+.down-button:hover{
+    background: transparent;
+    color: black;
+    /* transform: scale(0.9); */
+}
+
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+    padding: 10px;
+}

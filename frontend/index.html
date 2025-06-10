@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LibraryManagementSystem">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
+
+    <script src="/controllers/books.controller.js"></script>
+    <script src="/controllers/home.controller.js"></script>
+    <script src="controllers/about-us.controller.js"></script>
+    <script src="controllers/contact.controller.js"></script>
+    <script src="controllers/login.controller.js"></script>
+    <script src="controllers/profile.controller.js"></script>
+    <script src="controllers/signup.controller.js"></script>
+    <script src="controllers/conversation.controller.js"></script>
+    <script src="controllers/editprofile.controller.js"></script>
+    <script src="controllers/member.controller.js"></script>
+    <script src="controllers/unauthorized.controller.js"></script>
+    <script src="controllers/addbook.controller.js"></script>
+
+    <script src="services/auth.service.js"></script>
+    <script src="interceptors/auth.interceptors.js"></script>
+    <script src="services/books.service.js"></script>
+    <script src="services/conversation.service.js"></script>
+    <script src="services/loan.service.js"></script>
+    <script src="services/users.service.js"></script>
+    <script src="genres.json"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Poppins:wght@200;400;500;600;700&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Library Management System</title>
+</head>
+<body ng-controller="ProfileController">
+    <section class="header">
+        <nav class="nav-bar">
+            <div>
+                <a href="#!/"><h1>LIBOOK.</h1></a>
+            </div>
+            <div ng-if="isLoggedIn() && user.role === 'Member'" class="navlinks" id="navbar">
+                <ul>
+                    <li>
+                        <a href="#!/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!/books">Books</a>
+                    </li>
+                    <li>
+                        <a href="#!/about-us">About Us</i></a>
+                    </li>
+                    <li>
+                        <a href="#!/contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-if="isLoggedIn() && user.role === 'Admin'" class="navlinks" id="navbar">
+                <ul>
+                    <li>
+                        <a href="#!/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!/books">Books</a>
+                    </li>
+                    <li>
+                        <a href="#!/about-us">About Us</i></a>
+                    </li>
+                    <li>
+                        <a href="#!/members">Members</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div ng-if="!isLoggedIn()" class="navlinks" id="navbar">
+                <ul>
+                    <li>
+                        <a href="#!/">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!/about-us">About Us</i></a>
+                    </li>
+                    <li>
+                        <a href="#!/contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="!isLoggedIn()" class="icons">
+                <div class="icon" id="user">
+                    <a href="#!/login"><button class="btn">Login</button></a>
+                </div>
+                <div class="icon" id="user">
+                    <a href="#!/signup"><button class="btn">Sign Up</button></a>
+                </div>
+            </div>
+            <div ng-if="isLoggedIn()" class="icons">
+                <a href="#!/profile"> <div class="name">
+                    <span style="color: whitesmoke;"> {{ user.name.charAt(0) }} </span>
+                </div> </a>
+                <div >
+                    <a href="#!/conversation"><button class="btn">Conversation</button></a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <div ng-view></div>
+</body>
+</html>

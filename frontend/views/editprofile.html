@@ -1,0 +1,26 @@
+<h1 style="text-align: center; margin-top: 4rem;">Edit Profile</h1>
+<div ng-controller="EditProfileController">
+
+  <section class="create-account">
+    <div class="sign-up">
+      <form ng-submit="submitForm()">
+        <input type="text" name="name" ng-model="formData.name" placeholder="Name" ng-required="true" />
+
+        <input type="text" name="address" ng-model="formData.address" placeholder="Address" ng-required="true" />
+
+        <input type="number" name="age" ng-model="formData.age" placeholder="Age" ng-required="true" />
+
+        <input
+          type="email"
+          name="email"
+          ng-model="formData.email"
+          placeholder="Email"
+          aria-required="true"
+          required
+        />
+
+        <button type="submit" class="btn">Update</button>
+      </form>
+      </div>
+  </section>
+</div>

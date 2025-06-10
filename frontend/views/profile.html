@@ -1,0 +1,105 @@
+<div ng-controller="ProfileController">
+    <div>
+        <div>
+            <h1 style="text-align: center; margin-top: 1rem;">My Profile </h1>
+        </div>
+        <div class="user-name">
+            <h2>
+               Welcome, {{ user.name }}
+            </h2>
+        </div>
+    
+        <div class="info-card">
+            <div class="details">
+                <h4 style="width: 70px;">Address: </h4>
+                <p> {{user.address}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Age:</h4>
+                <p> {{user.age}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Email:</h4>
+                <p> {{user.email}} </p>
+            </div>
+            <div class="details">
+                <h4 style="width: 70px;">Role: </h4>
+                <p> {{user.role}} </p>
+            </div>
+            <hr style="margin: 10px 0;">
+            <div class="details">
+                <a href="#!/editprofile/{{user.userId}}"><button type="button" class="btn">Edit Information</button></a>
+            </div>
+        </div>
+    </div>
+    <hr style="margin: 30px 50px;">
+    <div ng-if="user.role === 'Member'">
+        <div>
+            <h1 style="text-align: center;">My book loan</h1>
+        </div>
+        <table style="width: 80%; margin: 3rem auto;">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Year</th>
+                    <th>Loan Date</th>
+                    <th>Return Date</th>
+                    <th>Is Returned?</th>
+                    <th>Amount</th>
+                    <th>Is Paid?    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="loan in myLoanDetails">
+                    <td> {{loan.title}} </td>
+                    <td> {{loan.author}} </td>
+                    <td> {{loan.publishedYear}} </td>
+                    <td> {{loan.loanDate | date: 'MMM d, y' }} </td>
+                    <td> {{loan.returnDate | date: 'MMM d, y' }} </td>
+                    <td> {{ loan.isReturned === true ? 'Returned' : 'Not Returned' }} </td>
+                    <td> {{loan.amount}} </td>
+                    <td> {{ loan.isPaid === true ? 'Paid' : 'Not Paid' }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-if="user.role === 'Admin'">
+        <div>
+            <h1 style="text-align: center;">Book Loan Details</h1>
+        </div>
+        <table style="width: 90%; margin: 3rem auto;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Published Year</th>
+                    <th>Loan Date</th>
+                    <th>Return Date</th>
+                    <th>Is Returned?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="loan in loanDetails">
+                    <td> {{loan.user.name}} </td>
+                    <td> {{loan.user.address}} </td>
+                    <td> {{loan.user.email}} </td>
+                    <td> {{loan.book.title}} </td>
+                    <td> {{loan.book.author}} </td>
+                    <td> {{loan.book.publishedYear}} </td>
+                    <td> {{loan.loanDate | date: 'MMM d, y' }} </td>
+                    <td> {{loan.returnDate | date: 'MMM d, y' }} </td>
+                    <td> {{ loan.isReturned === true ? 'Returned' : 'Not Returned' }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="down">
+        <button type="button" ng-click="logout()" class="down-button">Logout</button>
+    </div> 
+</div>
