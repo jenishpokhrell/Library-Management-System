@@ -15,11 +15,11 @@ app.config(function($routeProvider, $httpProvider){
         templateUrl: 'views/about-us.html',
         controller: 'AboutUsController'
     })
-    .when('/contact-us', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactController',
-        requiresAuth: true
-    })
+    // .when('/contact-us', {
+    //     templateUrl: 'views/contact.html',
+    //     controller: 'ContactController',
+    //     requiresAuth: true
+    // })
     .when('/conversation', {
         templateUrl: 'views/conversation.html',
         controller: 'ConversationController',

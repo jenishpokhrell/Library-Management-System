@@ -10,6 +10,9 @@ app.factory('BookService', function($http){
         },
         addBook: function(book){
             return $http.post(`${baseUrl}/addbook`, book)
+        },
+        getBookByTitle: function(title){
+            return $http.get(`${baseUrl}/getbookbytitle/${title}`)
         }
     }
 })

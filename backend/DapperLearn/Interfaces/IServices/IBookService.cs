@@ -15,6 +15,8 @@ namespace DapperLearn.Interfaces.IServices
 
         Task<GetBookDto> GetBookDetailsByIdAsync(int bookId);
 
+        Task<GetBookDto> GetBookDetailsByTitleAsync(string title);
+
         Task<IEnumerable<GetBookDto>> GetBookByGenre(string genreName);
 
         Task<GeneralResponseDto> UpdateBookAsync(AddBookDto updateBookDto, int bookId);

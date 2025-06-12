@@ -61,6 +61,19 @@ namespace DapperLearn.Controllers
         }
 
         [HttpGet]
+        [Route("GetBookByTitle/{title}")]
+        [Authorize]
+        public async Task<IActionResult> GetBookByTitle(string title)
+        {
+            var result = await _bookService.GetBookDetailsByTitleAsync(title);
+            if (result is null)
+            {
+                return NotFound("Book not found");
+            }
+            return Ok(result);
+        }
+
+        [HttpGet]
         [Route("GetBookByGenre/{genreName}")]
         [Authorize]
         public async Task<IActionResult> GetBookByGenre(string genreName)

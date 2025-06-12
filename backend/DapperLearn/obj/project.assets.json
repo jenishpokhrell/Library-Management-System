@@ -3018,11 +3018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jenish.p\\source\\repos\\DapperLearn\\DapperLearn\\DapperLearn.csproj",
+      "projectUniqueName": "C:\\Users\\jenish.p\\Library Management System\\backend\\DapperLearn\\DapperLearn.csproj",
       "projectName": "DapperLearn",
-      "projectPath": "C:\\Users\\jenish.p\\source\\repos\\DapperLearn\\DapperLearn\\DapperLearn.csproj",
+      "projectPath": "C:\\Users\\jenish.p\\Library Management System\\backend\\DapperLearn\\DapperLearn.csproj",
       "packagesPath": "C:\\Users\\jenish.p\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jenish.p\\source\\repos\\DapperLearn\\DapperLearn\\obj\\",
+      "outputPath": "C:\\Users\\jenish.p\\Library Management System\\backend\\DapperLearn\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jenish.p\\AppData\\Roaming\\NuGet\\NuGet.Config",

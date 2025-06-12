@@ -1,13 +1,45 @@
 <div ng-controller="BooksController">
     <div>
         <div>
-            <h1 style="text-align: center;">Books list</h1>
+            <h1 style="text-align: center; margin-top: 2rem;">Books list</h1>
         </div>
-        <div ng-if="books" class="books">
+        <form ng-submit="search()">
+            <div class="search">
+                <input type="text" placeholder="Write book title here">
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+        </form>
+        <div ng-if="searchedBook.title" class="books">
+            <div class="book">
+                <div>
+                    <h2>
+                        {{ searchedBook.title }}
+                    </h2>
+                    <div>
+                        <p>
+                            Author: {{searchedBook.author}}
+                        </p>
+                        <p>
+                            Published Year: {{ searchedBook.publishedYear }}
+                        </p>
+                        <p ng-class="{{searchedBook.isAvailable === true }}">
+                            isAvailable: {{ searchedBook.isAvailable === true ? 'Available' : 'Out of Stock' }}
+                        </p>
+                        <p>
+                            Genres: {{ searchedBook.genres }}
+                        </p>
+                    </div>
+                    <div>
+                        <button class="btn">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!searchedBook.title && books" class="books">
             <div class="book" ng-repeat="book in books">
                 <div>
                     <h2>
-                        {{book.title}}
+                        {{ book.title }}
                     </h2>
                     <div>
                         <p>

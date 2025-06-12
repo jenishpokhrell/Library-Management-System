@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0+EqvE+RaEgO7XSLFM29d3RNEDZMEDd9zKweOiBHpCFcoOB4J3HF+2HkeQaaMG7OdbpqYK+MOxMPxPgsfzM2kg==",
+  "dgSpecHash": "YTA8Vqm8pZIQ7Y4Y6aGdHHU7oBGqqjatMTGzhKb4AIqsiHghkODnnzIMgpAIKYmHldAG9bKgLo0tbe6NbJD/8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jenish.p\\source\\repos\\DapperLearn\\DapperLearn\\DapperLearn.csproj",
+  "projectFilePath": "C:\\Users\\jenish.p\\Library Management System\\backend\\DapperLearn\\DapperLearn.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jenish.p\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\jenish.p\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

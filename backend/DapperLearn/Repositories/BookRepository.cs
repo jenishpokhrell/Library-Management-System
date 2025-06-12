@@ -142,5 +142,19 @@ namespace DapperLearn.Repositories
                 }
             }
         }
+
+        public async Task<Book> GetBookByTitle(string title)
+        {
+            var query = "SELECT b.bookId, b.title, b.author, b.publishedYear, b.isAvailable, STRING_AGG(g.name, ', ') AS genres " +
+                "FROM Book b " +
+                "INNER JOIN BookGenres AS bg ON b.bookId = bg.bookId " +
+                "INNER JOIN Genre AS g on g.genreId = bg.genreId WHERE b.title LIKE @title " +
+                "GROUP BY b.bookId, b.title, b.author, b.publishedYear, b.isAvailable";
+
+            using (var connection = _dbo.CreateConnection())
+            {
+                return await connection.QueryFirstOrDefaultAsync<Book>(query, new { title = $"{title}%" });
+            }
+        }
     }
 }

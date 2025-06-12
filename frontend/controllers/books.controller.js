@@ -1,9 +1,11 @@
 app.controller('BooksController', function($scope, BookService, AuthService){
     $scope.message = "This is books page."
 
-    $scope.books = {}
+    $scope.searchedBook = {}
 
     $scope.user = {}
+
+    $scope.title = {}
 
     function loadBooks(){
         BookService.getBooks().then(function(response){
@@ -25,6 +27,12 @@ app.controller('BooksController', function($scope, BookService, AuthService){
         })
     }else{
         console.error('Token Not Found')
+    }
+
+    $scope.search = function(){
+        BookService.getBookByTitle($scope.title).then(function(response){
+            $scope.searchedBook = response.data
+        })
     }
 
     

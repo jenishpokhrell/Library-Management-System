@@ -136,5 +136,12 @@ namespace DapperLearn.Services
                 Message = "Book deleted successfully."
             };
         }
+
+        public async Task<GetBookDto> GetBookDetailsByTitleAsync(string title)
+        {
+            var book = await _bookRepository.GetBookByTitle(title);
+
+            return _mapper.Map<GetBookDto>(book);
+        }
     }
 }

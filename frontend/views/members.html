@@ -1,7 +1,13 @@
 <div ng-controller="ProfileController">
     <div>
-        <h1 style="text-align: center;">LIBOOK's Members</h1>
+        <h1 style="text-align: center; margin-top: 2rem;">LIBOOK's Members</h1>
     </div>
+    <form ng-submit="search()">
+        <div class="search">
+            <input type="text" placeholder="Search user using email">
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+    </form>
     <table style="width: 80%; margin: 3rem auto;">
         <thead>
             <tr>

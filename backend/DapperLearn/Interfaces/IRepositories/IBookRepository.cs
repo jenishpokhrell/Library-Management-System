@@ -17,6 +17,8 @@ namespace DapperLearn.Interfaces.IRepositories
 
         Task<Book> GetBookById(int bookId);
 
+        Task<Book> GetBookByTitle(string title);
+
         Task<IEnumerable<Book>> GetBookDetails();
 
         Task<IEnumerable<Book>> GetBookByGenre(string genreName);
