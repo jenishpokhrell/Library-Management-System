@@ -1,15 +1,19 @@
-app.controller('BooksController', function($scope, BookService, AuthService){
+app.controller('BooksController', function($scope, BookService, LoanService, AuthService){
     $scope.message = "This is books page."
 
     $scope.searchedBook = {}
 
     $scope.user = {}
 
-    $scope.title = {}
+    $scope.title = ''
+
+
+    $scope.loanId = {}
 
     function loadBooks(){
         BookService.getBooks().then(function(response){
             $scope.books = response.data
+            $scope.loanId = response.data.loanId
         }).catch(function(error){
             console.error('Error fetching users: ', error)
         })
@@ -35,6 +39,7 @@ app.controller('BooksController', function($scope, BookService, AuthService){
         })
     }
 
+    
     
 })
 

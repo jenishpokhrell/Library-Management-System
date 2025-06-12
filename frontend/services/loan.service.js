@@ -11,5 +11,12 @@ app.factory('LoanService', function($http){
         getLoanDetailsByUserId: function(userId){
             return $http.get(`${baseUrl}/GetLoanDetailsByuserId/${userId}`)
         },
+        updateLoanDetails: function(loanId, payload){
+            return $http.put(`${baseUrl}/updateloandetails/${loanId}`, payload, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
     }
 })

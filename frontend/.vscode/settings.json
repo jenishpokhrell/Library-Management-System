@@ -1,3 +1,5 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "terminal.integrated.allowMnemonics": false,
+    "workbench.layoutControl.type": "both"
 }

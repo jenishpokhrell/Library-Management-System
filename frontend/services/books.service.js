@@ -13,6 +13,7 @@ app.factory('BookService', function($http){
         },
         getBookByTitle: function(title){
             return $http.get(`${baseUrl}/getbookbytitle/${title}`)
-        }
+        },
+       
     }
 })

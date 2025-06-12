@@ -55,7 +55,7 @@
                     <td> {{ loan.returnDate | date: 'MMM d, y' }} </td>
                     <td> {{ loan.isReturned === true ? 'Returned' : 'Not Returned' }} </td>
                     <td> {{ loan.isPaid === true ? 'Paid' : 'Not Paid' }} </td>
-                    <td> <a href="#!/member/{{user.userId}}"><button type="button" class="btn" >Update</button></a> </td>
+                    <td> <button type="button" ng-click="updateLoanDetail(loan)" class="btn" >Update</button> </td>
                 </tr>
             </tbody>
         </table>
