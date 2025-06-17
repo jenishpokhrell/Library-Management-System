@@ -29,8 +29,8 @@
                             Genres: {{ searchedBook.genres }}
                         </p>
                     </div>
-                    <div>
-                        <button class="btn">View Book</button></a>
+                    <div ng-if="user.role === 'Admin'">
+                        <a href="#!/editbook/{{searchedBook.bookId}}"><button class="btn">Edit Book</button></a>
                     </div>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                             Genres: {{ book.genres }}
                         </p>
                     </div>
-                    <div>
-                        <button class="btn">View Book</button></a>
+                    <div ng-if="user.role === 'Admin'">
+                        <a href="#!/editbook/{{book.bookId}}"><button class="btn">Edit Book</button></a>
                     </div>
                 </div>
             </div>

@@ -17,22 +17,26 @@ app.controller('MemberController', function($scope, $routeParams, UserService, L
         getUser(userId)
     }
 
-    if(loanDetails){
-        LoanService.getLoanDetailsByUserId(userId).then(function(response){
-            $scope.loanDetails = response.data
-        }, function(error){
-            console.log('Error fetching loan details', error)
-        })
+    function loadLoanDetails(){
+        if(loanDetails){
+            LoanService.getLoanDetailsByUserId(userId).then(function(response){
+                $scope.loanDetails = response.data
+            }, function(error){
+                console.log('Error fetching loan details', error)
+            })
+        }
     }
+
+    loadLoanDetails()
 
     $scope.updateLoanDetail = function(loan){
         const loanId = loan.loanId
         const payload = {
             isReturned: true
         }
-        LoanService.updateLoanDetails(payload, loanId).then(function(response){
-            alert(response.data.message)
-            loadBooks()
+        LoanService.updateLoanDetails(loanId, payload).then(function(response){
+            alert("Loan Details updated successfully.")
+            loadLoanDetails()
         })
     }
 })

@@ -75,9 +75,9 @@ namespace DapperLearn.Controllers
         [HttpGet]
         [Route("GetUsers")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers(string role)
         {
-            var users = await _userServices.GetUsersAsync();
+            var users = await _userServices.GetUsersAsync(role);
             if(users is null)
             {
                 return NotFound("Users Not Found");

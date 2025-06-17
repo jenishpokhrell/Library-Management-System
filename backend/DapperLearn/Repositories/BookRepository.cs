@@ -156,5 +156,15 @@ namespace DapperLearn.Repositories
                 return await connection.QueryFirstOrDefaultAsync<Book>(query, new { title = $"{title}%" });
             }
         }
+
+        public async Task DeleteBookGenres(int bookId)
+        {
+            var query = "DELETE FROM BookGenres WHERE bookId = @bookId";
+
+            using(var connection = _dbo.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, new { bookId });
+            }
+        }
     }
 }

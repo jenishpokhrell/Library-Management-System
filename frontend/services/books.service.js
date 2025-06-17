@@ -14,6 +14,17 @@ app.factory('BookService', function($http){
         getBookByTitle: function(title){
             return $http.get(`${baseUrl}/getbookbytitle/${title}`)
         },
-       
+
+        getBookById: function(bookId){
+            return $http.get(`${baseUrl}/getbookbyid/${bookId}`)
+        },  
+
+        editBookDetails: function(bookId, book){
+            return $http.put(`${baseUrl}/updatebookdetails/${bookId}`, book)
+        },
+        
+        deleteBook: function(bookId){
+            return $http.delete(`${baseUrl}/deletebook/${bookId}`)
+        }
     }
 })

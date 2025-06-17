@@ -31,13 +31,13 @@ namespace DapperLearn.Repositories
             }
         }
 
-        public async Task<IEnumerable<Users>> GetUsers()
+        public async Task<IEnumerable<Users>> GetUsers(string role)
         {
-            var query = "SELECT * FROM Users";
+            var query = "SELECT * FROM Users WHERE role = @role";
 
             using(var connection = _context.CreateConnection())
             {
-                return await connection.QueryAsync<Users>(query);
+                return await connection.QueryAsync<Users>(query, new { role = "Member" } );
             }
         }
 

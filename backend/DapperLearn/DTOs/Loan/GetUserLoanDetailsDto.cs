@@ -15,5 +15,6 @@ namespace DapperLearn.DTOs.Loan
         public DateTime loanDate { get; set; }
         public DateTime returnDate { get; set; }
         public bool isReturned { get; set; }
+        public bool isPaid { get; set; }
     }
 }

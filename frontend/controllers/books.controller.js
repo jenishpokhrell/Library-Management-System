@@ -7,13 +7,12 @@ app.controller('BooksController', function($scope, BookService, LoanService, Aut
 
     $scope.title = ''
 
-
     $scope.loanId = {}
 
     function loadBooks(){
         BookService.getBooks().then(function(response){
             $scope.books = response.data
-            $scope.loanId = response.data.loanId
+            console.log($scope.books)
         }).catch(function(error){
             console.error('Error fetching users: ', error)
         })

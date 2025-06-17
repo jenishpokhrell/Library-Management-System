@@ -84,6 +84,24 @@ app.config(function($routeProvider, $httpProvider){
             }
         }
     })
+    .when('/editbook/:bookId', {
+        templateUrl: 'views/editbook.html',
+        controller: 'EditBookController',
+        requiresAuth: true,
+        resolve: {
+            auth: function($q, $location, AuthService){
+                return AuthService.getMyDetails().then(function(response){
+                    if(response.data.users.role === "Admin"){
+                        return true;
+                    } else {
+                        $location.path('/unauthorized');
+                        return $q.reject('Not Authorized');
+                    }
+                })
+                
+            }
+        }
+    })
     // .when('/admin', {
     //     templateUrl: 'views/adminpanel.html',
     //     controller: 'AdminController',

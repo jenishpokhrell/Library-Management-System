@@ -56,9 +56,11 @@ namespace DapperLearn.Services
             return _mapper.Map<UsersDto>(findUser);
         }
 
-        public async Task<IEnumerable<UsersDto>> GetUsersAsync()
+        public async Task<IEnumerable<UsersDto>> GetUsersAsync(string role)
         {
-            var users = await _userRepository.GetUsers();
+            var users = await _userRepository.GetUsers(role);
+
+            
             return _mapper.Map<IEnumerable<UsersDto>>(users);
         }
 

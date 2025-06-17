@@ -2,9 +2,9 @@
     <div>
         <h1 style="text-align: center; margin-top: 2rem;">LIBOOK's Members</h1>
     </div>
-    <form ng-submit="search()">
+    <form ng-submit="searchUser()">
         <div class="search">
-            <input type="text" placeholder="Search user using email">
+            <input type="text" ng-model="email" placeholder="Search user using email">
             <button type="submit" class="search-btn">Search</button>
         </div>
     </form>
@@ -18,13 +18,23 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody ng-if="searchedUser.email">
+            <tr>
+                <td> {{ searchedUser.name }} </td>
+                <td> {{ searchedUser.address }} </td>
+                <td> {{ searchedUser.age}} </td>
+                <td> {{ searchedUser.email }} </td>
+                <td> <a href="#!/member/{{searchedUser.userId}}"><button type="button" class="btn" >View</button></a> </td>
+            </tr>
+        </tbody>
+        <tbody ng-if="!searchedUser.email && users">
             <tr ng-repeat="user in users">
                 <td> {{ user.name }} </td>
                 <td> {{ user.address }} </td>
                 <td> {{ user.age}} </td>
                 <td> {{ user.email }} </td>
                 <td> <a href="#!/member/{{user.userId}}"><button type="button" class="btn" >View</button></a> </td>
+            </tr>
         </tbody>
     </table>
 </div>

@@ -96,7 +96,9 @@ namespace DapperLearn.Services
                 };
             }
 
-            foreach (var genreName in updateBookDto.genres)
+            await _bookRepository.DeleteBookGenres(bookId);
+
+            foreach (var genreName in updateBookDto.genres.Distinct())
             {
                 int genreId = await _bookRepository.GetorAddGenre(genreName);
                 await _bookRepository.AddBookGenre(bookId, genreId);
@@ -110,7 +112,6 @@ namespace DapperLearn.Services
                 StatusCode = 200,
                 Message = "Book updated successfully."
             };
-
         }
 
         public async Task<GeneralResponseDto> DeleteBookAsync(int bookId)

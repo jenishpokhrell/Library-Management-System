@@ -11,7 +11,7 @@ namespace DapperLearn.Interfaces.IServices
 {
     public interface IUserServices
     {
-        Task<IEnumerable<UsersDto>> GetUsersAsync();
+        Task<IEnumerable<UsersDto>> GetUsersAsync(string role);
 
         Task<GeneralResponseDto> RegisterUserAsync(RegisterUserDto registerDto);
 

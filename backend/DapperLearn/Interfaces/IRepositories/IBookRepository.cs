@@ -27,6 +27,8 @@ namespace DapperLearn.Interfaces.IRepositories
 
         Task DeleteBook(int bookId);
 
+        Task DeleteBookGenres(int bookId);
+
 
     }
 }

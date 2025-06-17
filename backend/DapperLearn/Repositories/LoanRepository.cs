@@ -104,8 +104,10 @@ namespace DapperLearn.Repositories
 
        public async Task<IEnumerable<GetUserLoanDetailsDto>> GetLoanDetailsByUserId(int userId)
         {
-            var query = "SELECT b.bookId, b.title, b.author, b.publishedYear, l.loanId, l.loanDate, l.returnDate, l.isReturned FROM Loan l " +
-                "INNER JOIN Book b ON b.bookId = l.bookId WHERE l.userId = @userId";
+            var query = "SELECT b.bookId, b.title, b.author, b.publishedYear, l.loanId, l.loanDate, l.returnDate, l.isReturned, f.isPaid FROM Loan l " +
+                "INNER JOIN Book b ON b.bookId = l.bookId " +
+                "INNER JOIN Fine f ON f.loanId = l.loanId " +
+                "WHERE l.userId = @userId";
 
             using(var connection = _dbo.CreateConnection())
             {

@@ -4,11 +4,14 @@ app.controller('ProfileController', function($scope, $location, AuthService, Loa
     $scope.myLoanDetails = {}
     $scope.users = {}
 
+    $scope.email = ''
+    $scope.searchedUser = {}
 
     const myDetails = AuthService.getMyDetails()
     const myLoanDetails = LoanService.getMyLoanDetails();
     const loanDetails = LoanService.getLoanDetails()
     const users = UserService.getUsers();
+    //const user = UserService.getUserByEmail()
 
     $scope.isLoggedIn = function(){
         return AuthService.isLoggedIn()
@@ -45,6 +48,12 @@ app.controller('ProfileController', function($scope, $location, AuthService, Loa
             $scope.users = response.data
         }, function(error){
             console.error('Error fetching user data ', error)
+        })
+    }
+
+    $scope.searchUser = function(){
+        UserService.getUserByEmail($scope.email).then(function(response){
+            $scope.searchedUser = response.data
         })
     }
  

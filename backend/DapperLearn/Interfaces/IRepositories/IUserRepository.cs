@@ -10,7 +10,7 @@ namespace DapperLearn.Interfaces.IRepositories
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<Users>> GetUsers();
+        Task<IEnumerable<Users>> GetUsers(string role);
 
         Task RegisterUser(Users users);
 

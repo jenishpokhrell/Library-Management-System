@@ -9,6 +9,10 @@ app.factory('UserService', function($http){
         getUserById: function(userId){
             return $http.get(`${baseUrl}/getusersby/${userId}`)
         },
+
+        getUserByEmail: function(email){
+            return $http.get(`${baseUrl}/getusers/${email}`)
+        },
         
         editUser: function(user, userId){
             return $http.put(`${baseUrl}/updateuser/${userId}`, user).then(response => {
